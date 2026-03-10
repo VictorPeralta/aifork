@@ -1,0 +1,37 @@
+{
+  "name": "aifork",
+  "version": "0.1.1",
+  "description": "Fan out a single prompt to multiple AI agent CLIs in parallel, isolated git worktrees",
+  "type": "module",
+  "bin": {
+    "aifork": "./bin/aifork.js"
+  },
+  "files": [
+    "dist/",
+    "bin/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "cosmiconfig": "^9.0.0",
+    "execa": "^9.3.0",
+    "ora": "^8.1.0",
+    "which": "^4.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/which": "^3.0.4",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
